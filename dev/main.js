@@ -209,6 +209,7 @@
 			document.querySelector('.process').style.display = 'none';
 			loadAudio(function() {
 				setTimeout(function() {
+					loadImg('image/qqliulanqi.png');
 					loadImg('image/icon_dot.png');
 					loadImg('image/icon_star.png');
 					loadGif('2', function() {
@@ -300,7 +301,7 @@
 			{t: 9, start: 0, end: 16000, unit: '万光年'},
 			{t: 9, start: 16000, end: 20000, unit: '光年'},
 			{t: 15, start: 0, end: 300000000, unit: '光年'},
-			{t: 6, start: 300000000, end: 6000000000, unit: '亿光年'}
+			{t: 6, start: 300000000, end: 6000000000, unit: '光年'}
 		];
 
 		var increase = function() {
