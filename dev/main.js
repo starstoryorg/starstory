@@ -106,7 +106,7 @@
 					}
 			});
 	}
-	var gifVersion = '?v=01091500';
+	var gifVersion = '?v=01131730';
 
 	// 加载音频
 	var loadAudio = function(callback) {
@@ -245,9 +245,7 @@
 										loadGif('22', function() {
 											loadGif('23');
 											loadGif('24');
-											loadGif('25', function() {
-												loadImg('image/share.png');
-											});
+											loadGif('25');
 										});
 									});
 								});
@@ -296,11 +294,11 @@
 		};
 
 		var poses = [
-			{t: 12, start: 0, end: 110, unit: '千米'},
-			{t: 10, start: 0, end: 58000000, unit: '千米'},
-			{t: 9, start: 0, end: 16000, unit: '万光年'},
+			{t: 12, start: 0, end: 110, unit: '千米', width: 74},
+			{t: 10, start: 0, end: 58000000, unit: '千米', width: 124},
+			{t: 9, start: 0, end: 16000, unit: '光年', width: 96},
 			{t: 9, start: 16000, end: 20000, unit: '光年'},
-			{t: 15, start: 0, end: 300000000, unit: '光年'},
+			{t: 15, start: 0, end: 300000000, unit: '光年', width: 138},
 			{t: 6, start: 300000000, end: 6000000000, unit: '光年'}
 		];
 
@@ -313,6 +311,11 @@
 			var instance = obj.start;
 			var each = (obj.end - instance) / times;
 			var instanceText = $('.instance-text');
+			if (obj.width) {
+				setTimeout(function() {
+					instanceText.css('width', obj.width + 'px');
+				}, 333.33);
+			}
 			tt = setInterval(function() {
 				if (i < times) {
 					instance = instance + each;
@@ -509,7 +512,7 @@
 				resultWrap.find('.star-instance').text(instance);
 				_hidePopWrap();
 				_showPopWrap(resultWrap);
-				$('.pop-share-wrap').show();
+				$('.music-wrap').hide();
 			}
 			else {
 				alert('对不起，命名长度超过限制，最多可输入20个字节，中文占2字节，英文占1字节');
@@ -695,9 +698,6 @@
 		});
 		$('.sec-wrap.gif_25 .pop-wrap.form .form-submit').click(function() {
 			showNameResult();
-		});
-		$('.pop-share-wrap .pop-share').click(function() {
-			$('.pop-share-wrap').hide();
 		});
 	});
 }());

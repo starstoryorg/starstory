@@ -70,6 +70,7 @@ body {
 	display: inline-block;
 	margin: 0 auto;
 	height: 40px;
+	width: 74px;
 }
 .instance-wrap .instance-line {
 	position: absolute;
@@ -250,6 +251,7 @@ a.btn.back:before {
 	right: 32px;
 	width: auto;
 	left: initial;
+	text-align: left;
 }
 .gif_24 .anc-wrap.a {
 	width: 18%;
@@ -321,7 +323,7 @@ a.btn.back:before {
 	outline: 0;
 	width: 142px;
 	height: 100%;
-	font-size: 16px;
+	font-size: 12px;
 }
 .pop-wrap.form .form-wrap .form-input-unit {
 	position: absolute;
@@ -362,7 +364,7 @@ a.btn.back:before {
 	background-image: url(image/btn_more.png);
 	height: 90px;
 }
-.pop-icon.c {
+.pop-wrap.result .pop-icon.c {
 	background-image: url(image/word_chupin.png);
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -373,7 +375,7 @@ a.btn.back:before {
 	margin-left: -60px;
 	bottom: 72px;
 }
-.pop-icon-wrap {
+.pop-wrap.result .pop-icon-wrap {
 	height: 50px;
 	position: absolute;
 	width: 164px;
@@ -381,7 +383,7 @@ a.btn.back:before {
 	margin-left: -82px;
 	bottom: 20px;
 }
-.pop-icon.a {
+.pop-wrap.result .pop-icon.a {
 	left: 0;
 	top: 13px;
 	width: 82px;
@@ -391,7 +393,7 @@ a.btn.back:before {
 	background-size: contain;
 	position: absolute;
 }
-.pop-icon.b {
+.pop-wrap.result .pop-icon.b {
 	top: 0;
 	right: 0;
 	width: 82px;
@@ -401,20 +403,23 @@ a.btn.back:before {
 	background-size: contain;
 	position: absolute;
 }
-.pop-share-wrap {
-	display: none;
-	background-color: rgba(0, 0, 0, .8);
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	z-index: 4;
-	left: 0;
+.pop-wrap.result .pop-share-wrap {
+	padding-top: 52px;
+	position: absolute;
+	right: 24px;
+	top: 24px;
+}
+.pop-wrap.result .pop-share-icon {
+	width: 42px;
+	height: 42px;
+	position: absolute;
+	background-size: contain;
+	background-image: url(image/jiantou.png);
+	background-repeat: no-repeat;
+	right: 0;
 	top: 0;
 }
-.pop-share-wrap .pop-share {
-	height: 100%;
-	background-size: contain;
-	background-position: center -80px;
-	background-image: url(image/share.png);
-	background-repeat: no-repeat;
+.pop-wrap.result .pop-share-text {
+	font-size: 18px;
+	color: #fff;
 }
