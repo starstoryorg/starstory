@@ -87,13 +87,13 @@ body {
 }
 
 .logo-wrap {
-	background-image: url(image/zhuixingji.png);
+	background-image: url(image/zhuixingji2.png);
 	position: fixed;
 	z-index: 3;
-	width: 82px;
-	height: 50px;
-	top: 18px;
-	left: 12px;
+	width: 150px;
+	height: 60px;
+	top: 15px;
+	left: 0;
 	background-repeat: no-repeat;
 	background-size: contain;
 }
@@ -373,19 +373,19 @@ a.btn.back:before {
 	position: absolute;
 	left: 50%;
 	margin-left: -60px;
-	bottom: 72px;
+	bottom: 52px;
 }
 .pop-wrap.result .pop-icon-wrap {
-	height: 50px;
+	height: 64px;
 	position: absolute;
-	width: 164px;
+	width: 216px;
 	left: 50%;
 	margin-left: -82px;
-	bottom: 20px;
+	bottom: 0;
 }
 .pop-wrap.result .pop-icon.a {
 	left: 0;
-	top: 13px;
+	top: 22px;
 	width: 82px;
 	height: 21px;
 	background-image: url(image/qqliulanqi2.png);
@@ -396,9 +396,9 @@ a.btn.back:before {
 .pop-wrap.result .pop-icon.b {
 	top: 0;
 	right: 0;
-	width: 82px;
-	height: 50px;
-	background-image: url(image/zhuixingji.png);
+	width: 150px;
+	height: 60px;
+	background-image: url(image/zhuixingji2.png);
 	background-repeat: no-repeat;
 	background-size: contain;
 	position: absolute;
