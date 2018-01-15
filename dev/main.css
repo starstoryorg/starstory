@@ -184,6 +184,9 @@ a.btn.fun {
 a.btn.fun.loaded {
 	display: none;
 }
+a.btn.fun.loading {
+	height: 16px;
+}
 a.btn.fun:before {
 	content: '';
 	display: block;
@@ -195,6 +198,9 @@ a.btn.fun:before {
 	background-size: contain;
 	background-repeat: no-repeat;
 	top: 6px;
+}
+a.btn.fun.loading:before {
+	top: -2px;
 }
 a.btn.fun.b {
 	right: 32px;
