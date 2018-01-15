@@ -177,9 +177,12 @@ a.btn {
 	from {opacity: 1;}
 	to {opacity: .4;}
 }
-a.btn.fun.animate {
+a.btn.fun {
 	-webkit-animation: breath 1s linear infinite alternate;
 	animation: breath 1s linear infinite alternate;
+}
+a.btn.fun.loaded {
+	display: none;
 }
 a.btn.fun:before {
 	content: '';
@@ -361,7 +364,7 @@ a.btn.back:before {
 }
 .pop-wrap.result .pop-btn.more {
 	margin-top: -24px;
-	background-image: url(image/btn_more.png);
+	background-image: url(image/btn_more2.png);
 	height: 90px;
 }
 .pop-wrap.result .pop-icon.c {

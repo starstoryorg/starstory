@@ -219,33 +219,41 @@
 						loadGif('4fan');
 						loadGif('3fan');
 						loadGif('6', function() {
+							showGT('2');
 							loadGif('7');
 							loadGif('8');
 							loadGif('9');
 							loadGif('8fan');
 							loadGif('7fan');
 							loadGif('10', function() {
+								showGT('6');
 								loadGif('11');
 								loadGif('12');
 								loadGif('13');
 								loadGif('12fan');
 								loadGif('11fan');
 								loadGif('14', function() {
+									showGT('10');
 									loadGif('15');
 									loadGif('16');
 									loadGif('17');
 									loadGif('16fan');
 									loadGif('15fan');
 									loadGif('18', function() {
+										showGT('14');
 										loadGif('19');
 										loadGif('20');
 										loadGif('21');
 										loadGif('20fan');
 										loadGif('19fan');
 										loadGif('22', function() {
-											loadGif('23');
+											loadGif('23', function() {
+												showGT('18');
+											});
 											loadGif('24');
-											loadGif('25');
+											loadGif('25', function() {
+												showGT('23');
+											});
 										});
 									});
 								});
@@ -257,7 +265,7 @@
 		});
 	};
 
-	// 极光文字及按钮显示
+	// 探索流程中的文字及返回按钮显示
 	var showJG = function(sec) {
 		var text = sec.find('.text');
 		var back = sec.find('.btn.back');
@@ -267,16 +275,10 @@
 			back.show().animate({opacity: 1}, 500);
 		});
 	};
-	// 探索按钮显示
-	var showTS = function(sec, t) {
-		var btns = sec.find('a.btn.fun');
-		btns.hide();
-		btns.css('opacity', '0');
-		setTimeout(function() {
-			btns.show().animate({opacity: 1}, 500, function() {
-				btns.addClass('animate');
-			});
-		}, t * 1000);
+	// 继续探索按钮显示
+	var showGT = function(index) {
+		$('.sec-wrap.gif_' + index + ' a.btn.fun.loading').hide();
+		$('.sec-wrap.gif_' + index + ' a.btn.fun.loaded').show();
 	};
 
 	// 距离
@@ -358,7 +360,6 @@
 		setTimeout(function() {
 			hideSec(1);
 			showSec(2, function(sec) {
-				showTS(sec, 3);
 				instance.increase();
 			});
 		}, 14040);
@@ -455,7 +456,6 @@
 					instance.hide();
 				}, 500);
 				showJG(sec);
-				showTS(sec, 4);
 			});
 		}, 2000);
 	};
@@ -543,14 +543,13 @@
 			$('#music')[0].play();
 		});
 
-		$('.sec-wrap.gif_2 .btn.fun.a').click(function() {
+		$('.sec-wrap.gif_2 .btn.fun.a.loaded').click(function() {
 			hideSec(2);
 			showSec3();
 		});
-		$('.sec-wrap.gif_2 .btn.fun.b').click(function() {
+		$('.sec-wrap.gif_2 .btn.fun.b.loaded').click(function() {
 			hideSec(2);
 			showSec(6, function(sec) {
-				showTS(sec, 5);
 				instance.increase();
 			});
 		});
@@ -570,14 +569,13 @@
 			}, 1040);
 		});
 
-		$('.sec-wrap.gif_6 .btn.fun.a').click(function() {
+		$('.sec-wrap.gif_6 .btn.fun.a.loaded').click(function() {
 			hideSec(6);
 			showSec7();
 		});
-		$('.sec-wrap.gif_6 .btn.fun.b').click(function() {
+		$('.sec-wrap.gif_6 .btn.fun.b.loaded').click(function() {
 			hideSec(6);
 			showSec(10, function(sec) {
-				showTS(sec, 2);
 				instance.increase();
 			});
 		});
@@ -597,14 +595,13 @@
 			}, 1080);
 		});
 
-		$('.sec-wrap.gif_10 .btn.fun.a').click(function() {
+		$('.sec-wrap.gif_10 .btn.fun.a.loaded').click(function() {
 			hideSec(10);
 			showSec11();
 		});
-		$('.sec-wrap.gif_10 .btn.fun.b').click(function() {
+		$('.sec-wrap.gif_10 .btn.fun.b.loaded').click(function() {
 			hideSec(10);
 			showSec(14, function(sec) {
-				showTS(sec, 2);
 				instance.increase();
 			});
 		});
@@ -624,14 +621,13 @@
 			}, 2070);
 		});
 
-		$('.sec-wrap.gif_14 .btn.fun.a').click(function() {
+		$('.sec-wrap.gif_14 .btn.fun.a.loaded').click(function() {
 			hideSec(14);
 			showSec15();
 		});
-		$('.sec-wrap.gif_14 .btn.fun.b').click(function() {
+		$('.sec-wrap.gif_14 .btn.fun.b.loaded').click(function() {
 			hideSec(14);
 			showSec(18, function(sec) {
-				showTS(sec, 2);
 				instance.increase();
 			}, true);
 		});
@@ -651,11 +647,11 @@
 			}, 1000);
 		});
 
-		$('.sec-wrap.gif_18 .btn.fun.a').click(function() {
+		$('.sec-wrap.gif_18 .btn.fun.a.loaded').click(function() {
 			hideSec(18);
 			showSec19();
 		});
-		$('.sec-wrap.gif_18 .btn.fun.b').click(function() {
+		$('.sec-wrap.gif_18 .btn.fun.b.loaded').click(function() {
 			hideSec(18);
 			showSec22();
 		});
@@ -675,7 +671,7 @@
 			}, 90);
 		});
 
-		$('.sec-wrap.gif_23 .btn.fun.b').click(function() {
+		$('.sec-wrap.gif_23 .btn.fun.b.loaded').click(function() {
 			hideSec(23);
 			showSec(24, function(sec) {
 				var text = sec.find('.text');
