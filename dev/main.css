@@ -33,8 +33,9 @@ body {
 	text-align: center;
 	position: relative;
 	font-family: Arial;
-	height: 16px;
-	top: 55%;
+	line-height: 20px;
+	height: 40px;
+	top: 54%;
 }
 
 .instance-wrap {
@@ -223,13 +224,6 @@ a.btn.back:before {
 	top: 2px;
 	background-position: 4px;
 }
-.anc-wrap {
-	position: absolute;
-}
-.anc-wrap .anc {
-	padding-bottom: 100%;
-	display: block;
-}
 
 .gif_1 p.text {
 	font-size: 16px;
@@ -293,7 +287,7 @@ a.btn.back:before {
 .gif_25 .pop-text {
 	color: #fff;
 	font-size: 18px;
-	margin: 76% auto 0;
+	margin: 73% auto 0;
 	line-height: 28px;
 }
 .pop-wrap.name .pop-text {
@@ -314,8 +308,11 @@ a.btn.back:before {
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-image: url(image/pop_big_square.png);
-	margin: 73% auto 0;
+	margin-left: -132px;
 	overflow: hidden;
+	position: fixed;
+	bottom: 24%;
+	left: 50%;
 }
 .pop-wrap.form .form-wrap .form-input-wrap {
 	overflow: hidden;
@@ -361,10 +358,13 @@ a.btn.back:before {
 	display: block;
 	width: 254px;
 	background-size: contain;
-	margin: 20px auto 0;
+	margin: 0 auto;
 	background-repeat: no-repeat;
+	position: relative;
+	z-index: 2;
 }
 .pop-wrap.result .pop-btn.enter {
+	margin-top: -14px;
 	background-image: url(image/btn_enter.png);
 	height: 88px;
 }
@@ -382,7 +382,7 @@ a.btn.back:before {
 	position: absolute;
 	left: 50%;
 	margin-left: -60px;
-	bottom: 52px;
+	bottom: 50px;
 }
 .pop-wrap.result .pop-icon-wrap {
 	height: 64px;
@@ -390,7 +390,7 @@ a.btn.back:before {
 	width: 216px;
 	left: 50%;
 	margin-left: -82px;
-	bottom: 0;
+	bottom: -2px;
 }
 .pop-wrap.result .pop-icon.a {
 	left: 0;

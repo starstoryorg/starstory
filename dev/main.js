@@ -134,6 +134,28 @@
 		}
 	};
 
+	Image.prototype.load = function(url, onProgress, onComplete){
+		var self = this;
+		var xmlHTTP = new XMLHttpRequest();
+		xmlHTTP.open('GET', url,true);
+		xmlHTTP.responseType = 'arraybuffer';
+		xmlHTTP.onload = function(e) {
+			var blob = new Blob([this.response]);
+			self.src = window.URL.createObjectURL(blob);
+			onComplete && onComplete();
+		};
+		xmlHTTP.onprogress = function(e) {
+			self.completedPercentage = parseInt((e.loaded / e.total) * 100);
+			onProgress && onProgress(self.completedPercentage);
+		};
+		xmlHTTP.onloadstart = function() {
+			self.completedPercentage = 0;
+		};
+		xmlHTTP.send();
+	};
+
+	Image.prototype.completedPercentage = 0;
+
 	// 加载图片
 	var loadImg = function(imgPath, callback) {
 		setTimeout(function() {
@@ -204,7 +226,12 @@
 
 	// 初始化
 	var init = function() {
-		loadGif('1', function() {
+		var percentNum = $('.process .percent-num');
+		var img = new Image();
+		$('.sec-wrap.gif_1 .gif-wrap').append($(img));
+		img.load('resources/gif/1.gif' + gifVersion, function(progress) {
+			percentNum.text(progress);
+		}, function() {
 			showSec1();
 			document.querySelector('.process').style.display = 'none';
 			loadAudio(function() {
@@ -680,7 +707,7 @@
 			});
 		});
 
-		$('.sec-wrap.gif_24 .anc').click(function() {
+		$('.sec-wrap.gif_24 .gif-wrap').click(function() {
 			hideSec(24);
 			showSec(25, function() {
 				setTimeout(function() {
