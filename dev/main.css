@@ -353,25 +353,32 @@ a.btn.back:before {
 }
 .pop-wrap.result .pop-text {
 	width: 236px;
+	margin: 0;
+	position: absolute;
+	left: 50%;
+	margin-left: -118px;
+	bottom: 218px;
 }
 .pop-wrap.result .pop-btn {
 	display: block;
 	width: 254px;
 	background-size: contain;
-	margin: 0 auto;
 	background-repeat: no-repeat;
-	position: relative;
-	z-index: 2;
+	position: absolute;
+	left: 50%;
+	margin-left: -127px;
 }
 .pop-wrap.result .pop-btn.enter {
 	margin-top: -14px;
 	background-image: url(image/btn_enter.png);
 	height: 88px;
+	bottom: 136px;
 }
 .pop-wrap.result .pop-btn.more {
 	margin-top: -24px;
 	background-image: url(image/btn_more2.png);
 	height: 90px;
+	bottom: 72px;
 }
 .pop-wrap.result .pop-icon.c {
 	background-image: url(image/word_chupin.png);

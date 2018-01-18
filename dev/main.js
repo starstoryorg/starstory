@@ -109,7 +109,7 @@
 	var gifVersion = '?v=01131730';
 
 	// 加载音频
-	var loadAudio = function(callback) {
+	var loadAudio = function() {
 
 		var audio = $('#music');
 		audio.attr('src', 'resources/mp3/Infinite_Space.mp3');
@@ -119,18 +119,10 @@
 		if (ua.match(/MicroMessenger/i) == 'micromessenger') {
 			document.addEventListener("WeixinJSBridgeReady", function () {
 				audio[0].play();
-				audio[0].oncanplay = function() {
-					if (callback) {
-						callback();
-					}
-				};
 			}, false);
 		}
 		else {
 			audio[0].play();
-			if (callback) {
-				callback();
-			}
 		}
 	};
 
@@ -179,9 +171,10 @@
 	};
 
 	// 加载gif图片
-	var loadGif = function(gifName, callback) {
-		loadImg('gif/' + gifName + '.gif' + gifVersion, callback);
-		$('.sec-wrap.gif_' + gifName + ' img').attr('src', 'resources/gif/' + gifName + '.gif' + gifVersion);
+	var loadGif = function(gifName, onProgress, onComplete) {
+		var img = new Image();
+		$('.sec-wrap.gif_' + gifName + ' .gif-wrap').append($(img));
+		img.load('resources/gif/' + gifName + '.gif' + gifVersion, onProgress, onComplete);
 	};
 
 	// 显示图块
@@ -227,59 +220,57 @@
 	// 初始化
 	var init = function() {
 		var percentNum = $('.process .percent-num');
-		var img = new Image();
-		$('.sec-wrap.gif_1 .gif-wrap').append($(img));
-		img.load('resources/gif/1.gif' + gifVersion, function(progress) {
+		loadGif('1', function(progress) {
 			percentNum.text(progress);
 		}, function() {
 			showSec1();
 			document.querySelector('.process').style.display = 'none';
-			loadAudio(function() {
-				setTimeout(function() {
-					loadImg('image/qqliulanqi.png');
-					loadImg('image/icon_dot.png');
-					loadImg('image/icon_star.png');
-					loadGif('2', function() {
-						loadGif('3');
-						loadGif('4');
-						loadGif('5');
-						loadGif('4fan');
-						loadGif('3fan');
-						loadGif('6', function() {
-							showGT('2');
-							loadGif('7');
-							loadGif('8');
-							loadGif('9');
-							loadGif('8fan');
-							loadGif('7fan');
-							loadGif('10', function() {
-								showGT('6');
-								loadGif('11');
-								loadGif('12');
-								loadGif('13');
-								loadGif('12fan');
-								loadGif('11fan');
-								loadGif('14', function() {
-									showGT('10');
-									loadGif('15');
-									loadGif('16');
-									loadGif('17');
-									loadGif('16fan');
-									loadGif('15fan');
-									loadGif('18', function() {
-										showGT('14');
-										loadGif('19');
-										loadGif('20');
-										loadGif('21');
-										loadGif('20fan');
-										loadGif('19fan');
-										loadGif('22', function() {
-											loadGif('23', function() {
-												showGT('18');
-											});
-											loadGif('24');
-											loadGif('25', function() {
-												showGT('23');
+			loadAudio();
+			setTimeout(function() {
+				loadImg('image/qqliulanqi.png');
+				loadImg('image/icon_dot.png');
+				loadImg('image/icon_star.png');
+				loadGif('2', null, function() {
+					loadGif('3');
+					loadGif('4');
+					loadGif('5');
+					loadGif('4fan');
+					loadGif('3fan');
+					loadGif('6', null, function() {
+						showGT('2');
+						loadGif('7');
+						loadGif('8');
+						loadGif('9');
+						loadGif('8fan');
+						loadGif('7fan');
+						loadGif('10', null, function() {
+							showGT('6');
+							loadGif('11');
+							loadGif('12');
+							loadGif('13');
+							loadGif('12fan');
+							loadGif('11fan');
+							loadGif('14', null, function() {
+								showGT('10');
+								loadGif('15');
+								loadGif('16');
+								loadGif('17');
+								loadGif('16fan');
+								loadGif('15fan');
+								loadGif('18', null, function() {
+									showGT('14');
+									loadGif('19');
+									loadGif('20');
+									loadGif('21');
+									loadGif('20fan');
+									loadGif('19fan');
+									loadGif('22', null, function() {
+										loadGif('23', null, function() {
+											showGT('18');
+											loadGif('24', null, function() {
+												loadGif('25', null, function() {
+													showGT('23');
+												});
 											});
 										});
 									});
