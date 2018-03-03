@@ -88,7 +88,7 @@ body {
 }
 
 .logo-wrap {
-	background-image: url(image/zhuixingji2.png);
+	background-image: url(image/logo_zhuixingji.png);
 	position: fixed;
 	z-index: 3;
 	width: 150px;
@@ -414,7 +414,7 @@ a.btn.back:before {
 	right: 0;
 	width: 150px;
 	height: 60px;
-	background-image: url(image/zhuixingji2.png);
+	background-image: url(image/logo_zhuixingji.png);
 	background-repeat: no-repeat;
 	background-size: contain;
 	position: absolute;

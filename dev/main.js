@@ -172,8 +172,7 @@
 
 	// 加载gif图片
 	var loadGif = function(gifName, onProgress, onComplete) {
-		var img = new Image();
-		$('.sec-wrap.gif_' + gifName + ' .gif-wrap').append($(img));
+		var img = document.querySelector('.sec-wrap.gif_' + gifName + ' .gif-wrap img');
 		img.load('resources/gif/' + gifName + '.gif' + gifVersion, onProgress, onComplete);
 	};
 
@@ -233,43 +232,43 @@
 				loadGif('2', null, function() {
 					loadGif('3');
 					loadGif('4');
-					loadGif('5');
-					loadGif('4fan');
-					loadGif('3fan');
-					loadGif('6', null, function() {
+					loadGif('5', null, function() {
 						showGT('2');
-						loadGif('7');
-						loadGif('8');
-						loadGif('9');
-						loadGif('8fan');
-						loadGif('7fan');
-						loadGif('10', null, function() {
-							showGT('6');
-							loadGif('11');
-							loadGif('12');
-							loadGif('13');
-							loadGif('12fan');
-							loadGif('11fan');
-							loadGif('14', null, function() {
-								showGT('10');
-								loadGif('15');
-								loadGif('16');
-								loadGif('17');
-								loadGif('16fan');
-								loadGif('15fan');
-								loadGif('18', null, function() {
-									showGT('14');
-									loadGif('19');
-									loadGif('20');
-									loadGif('21');
-									loadGif('20fan');
-									loadGif('19fan');
-									loadGif('22', null, function() {
-										loadGif('23', null, function() {
-											showGT('18');
-											loadGif('24', null, function() {
-												loadGif('25', null, function() {
-													showGT('23');
+						loadGif('6', null, function() {
+							showGT('5');
+							loadGif('7');
+							loadGif('8');
+							loadGif('9', null, function() {
+								showGT('6');
+								loadGif('10', null, function() {
+									showGT('9');
+									loadGif('11');
+									loadGif('12');
+									loadGif('13', null, function() {
+										showGT('10');
+										loadGif('14', null, function() {
+											showGT('13');
+											loadGif('15');
+											loadGif('16');
+											loadGif('17', null, function() {
+												showGT('14');
+												loadGif('18', null, function() {
+													showGT('17');
+													loadGif('19');
+													loadGif('20');
+													loadGif('21', null, function() {
+														showGT('18');
+														loadGif('22', null, function() {
+															loadGif('23', null, function() {
+																showGT('21');
+																loadGif('24', null, function() {
+																	loadGif('25', null, function() {
+																		showGT('23');
+																	});
+																});
+															});
+														});
+													});
 												});
 											});
 										});
@@ -286,12 +285,8 @@
 	// 探索流程中的文字及返回按钮显示
 	var showJG = function(sec) {
 		var text = sec.find('.text');
-		var back = sec.find('.btn.back');
 		text.css('opacity', '0');
-		back.css('opacity', '0').hide();
-		text.animate({opacity: 1}, 4000, function() {
-			back.show().animate({opacity: 1}, 500);
-		});
+		text.animate({opacity: 1}, 4000);
 	};
 	// 继续探索按钮显示
 	var showGT = function(index) {
@@ -565,128 +560,53 @@
 			hideSec(2);
 			showSec3();
 		});
-		$('.sec-wrap.gif_2 .btn.fun.b.loaded').click(function() {
-			hideSec(2);
+		$('.sec-wrap.gif_5 .btn.fun.b.loaded').click(function() {
+			hideSec(5);
 			showSec(6, function(sec) {
 				instance.increase();
 			});
-		});
-
-		$('.sec-wrap.gif_5 .btn.back').click(function() {
-			hideSec(5, true);
-			showSec('4fan');
-			setTimeout(function() {
-				hideSec('4fan', true);
-				showSec('3fan');
-				setTimeout(function() {
-					hideSec('3fan', true);
-					showSec(2, function() {
-						instance.show();
-					}, true);
-				}, 1080);
-			}, 1040);
 		});
 
 		$('.sec-wrap.gif_6 .btn.fun.a.loaded').click(function() {
 			hideSec(6);
 			showSec7();
 		});
-		$('.sec-wrap.gif_6 .btn.fun.b.loaded').click(function() {
-			hideSec(6);
+		$('.sec-wrap.gif_9 .btn.fun.b.loaded').click(function() {
+			hideSec(9);
 			showSec(10, function(sec) {
 				instance.increase();
 			});
-		});
-
-		$('.sec-wrap.gif_9 .btn.back').click(function() {
-			hideSec(9, true);
-			showSec('8fan');
-			setTimeout(function() {
-				hideSec('8fan', true);
-				showSec('7fan');
-				setTimeout(function() {
-					hideSec('7fan', true);
-					showSec(6, function() {
-						instance.show();
-					}, true);
-				}, 1080);
-			}, 1080);
 		});
 
 		$('.sec-wrap.gif_10 .btn.fun.a.loaded').click(function() {
 			hideSec(10);
 			showSec11();
 		});
-		$('.sec-wrap.gif_10 .btn.fun.b.loaded').click(function() {
-			hideSec(10);
+		$('.sec-wrap.gif_13 .btn.fun.b.loaded').click(function() {
+			hideSec(13);
 			showSec(14, function(sec) {
 				instance.increase();
 			});
-		});
-
-		$('.sec-wrap.gif_13 .btn.back').click(function() {
-			hideSec(13, true);
-			showSec('12fan');
-			setTimeout(function() {
-				hideSec('12fan', true);
-				showSec('11fan');
-				setTimeout(function() {
-					hideSec('11fan', true);
-					showSec(10, function() {
-						instance.show();
-					}, true);
-				}, 1080);
-			}, 2070);
 		});
 
 		$('.sec-wrap.gif_14 .btn.fun.a.loaded').click(function() {
 			hideSec(14);
 			showSec15();
 		});
-		$('.sec-wrap.gif_14 .btn.fun.b.loaded').click(function() {
-			hideSec(14);
+		$('.sec-wrap.gif_17 .btn.fun.b.loaded').click(function() {
+			hideSec(17);
 			showSec(18, function(sec) {
 				instance.increase();
 			}, true);
-		});
-
-		$('.sec-wrap.gif_17 .btn.back').click(function() {
-			hideSec(17, true);
-			showSec('16fan');
-			setTimeout(function() {
-				hideSec('16fan', true);
-				showSec('15fan');
-				setTimeout(function() {
-					hideSec('15fan', true);
-					showSec(14, function() {
-						instance.show();
-					}, true);
-				}, 2000);
-			}, 1000);
 		});
 
 		$('.sec-wrap.gif_18 .btn.fun.a.loaded').click(function() {
 			hideSec(18);
 			showSec19();
 		});
-		$('.sec-wrap.gif_18 .btn.fun.b.loaded').click(function() {
-			hideSec(18);
+		$('.sec-wrap.gif_21 .btn.fun.b.loaded').click(function() {
+			hideSec(21);
 			showSec22();
-		});
-
-		$('.sec-wrap.gif_21 .btn.back').click(function() {
-			hideSec(21, true);
-			showSec('20fan');
-			setTimeout(function() {
-				hideSec('20fan', true);
-				showSec('19fan');
-				setTimeout(function() {
-					hideSec('19fan', true);
-					showSec(18, function() {
-						instance.show();
-					});
-				}, 1080);
-			}, 90);
 		});
 
 		$('.sec-wrap.gif_23 .btn.fun.b.loaded').click(function() {
