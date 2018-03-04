@@ -234,30 +234,40 @@
 					loadGif('4');
 					loadGif('5', null, function() {
 						showGT('2');
+						loadGif('4fan');
+						loadGif('3fan');
 						loadGif('6', null, function() {
 							showGT('5');
 							loadGif('7');
 							loadGif('8');
 							loadGif('9', null, function() {
 								showGT('6');
+								loadGif('8fan');
+								loadGif('7fan');
 								loadGif('10', null, function() {
 									showGT('9');
 									loadGif('11');
 									loadGif('12');
 									loadGif('13', null, function() {
 										showGT('10');
+										loadGif('12fan');
+										loadGif('11fan');
 										loadGif('14', null, function() {
 											showGT('13');
 											loadGif('15');
 											loadGif('16');
 											loadGif('17', null, function() {
 												showGT('14');
+												loadGif('16fan');
+												loadGif('15fan');
 												loadGif('18', null, function() {
 													showGT('17');
 													loadGif('19');
 													loadGif('20');
 													loadGif('21', null, function() {
 														showGT('18');
+														loadGif('20fan');
+														loadGif('19fan');
 														loadGif('22', null, function() {
 															loadGif('23', null, function() {
 																showGT('21');
@@ -562,9 +572,17 @@
 		});
 		$('.sec-wrap.gif_5 .btn.fun.b.loaded').click(function() {
 			hideSec(5);
-			showSec(6, function(sec) {
-				instance.increase();
-			});
+			showSec('4fan');
+			setTimeout(function() {
+				hideSec('4fan');
+				showSec('3fan');
+				setTimeout(function() {
+					hideSec('3fan');
+					showSec(6, function(sec) {
+						instance.increase();
+					});
+				}, 1080);
+			}, 1040);
 		});
 
 		$('.sec-wrap.gif_6 .btn.fun.a.loaded').click(function() {
@@ -573,9 +591,17 @@
 		});
 		$('.sec-wrap.gif_9 .btn.fun.b.loaded').click(function() {
 			hideSec(9);
-			showSec(10, function(sec) {
-				instance.increase();
-			});
+			showSec('8fan');
+			setTimeout(function() {
+				hideSec('8fan');
+				showSec('7fan');
+				setTimeout(function() {
+					hideSec('7fan');
+					showSec(10, function(sec) {
+						instance.increase();
+					});
+				}, 1080);
+			}, 1080);
 		});
 
 		$('.sec-wrap.gif_10 .btn.fun.a.loaded').click(function() {
@@ -584,9 +610,17 @@
 		});
 		$('.sec-wrap.gif_13 .btn.fun.b.loaded').click(function() {
 			hideSec(13);
-			showSec(14, function(sec) {
-				instance.increase();
-			});
+			showSec('12fan');
+			setTimeout(function() {
+				hideSec('12fan');
+				showSec('11fan');
+				setTimeout(function() {
+					hideSec('11fan');
+					showSec(14, function(sec) {
+						instance.increase();
+					});
+				}, 1080);
+			}, 2070);
 		});
 
 		$('.sec-wrap.gif_14 .btn.fun.a.loaded').click(function() {
@@ -595,9 +629,17 @@
 		});
 		$('.sec-wrap.gif_17 .btn.fun.b.loaded').click(function() {
 			hideSec(17);
-			showSec(18, function(sec) {
-				instance.increase();
-			}, true);
+			showSec('16fan');
+			setTimeout(function() {
+				hideSec('16fan');
+				showSec('15fan');
+				setTimeout(function() {
+					hideSec('15fan');
+					showSec(18, function(sec) {
+						instance.increase();
+					});
+				}, 2000);
+			}, 1000);
 		});
 
 		$('.sec-wrap.gif_18 .btn.fun.a.loaded').click(function() {
@@ -606,7 +648,15 @@
 		});
 		$('.sec-wrap.gif_21 .btn.fun.b.loaded').click(function() {
 			hideSec(21);
-			showSec22();
+			showSec('20fan');
+			setTimeout(function() {
+				hideSec('20fan');
+				showSec('19fan');
+				setTimeout(function() {
+					hideSec('19fan');
+					showSec22();
+				}, 1080);
+			}, 90);
 		});
 
 		$('.sec-wrap.gif_23 .btn.fun.b.loaded').click(function() {
