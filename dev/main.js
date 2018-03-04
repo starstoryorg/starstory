@@ -275,6 +275,15 @@
 															loadGif('23', null, function() {
 																showGT('21');
 																loadGif('24', null, function() {
+																	loadImg('image/bg_blue.png');
+																	loadImg('image/bg_white.png');
+																	loadImg('image/bg_yellow.png');
+																	loadImg('image/img_trai.png');
+																	loadImg('image/img_kuang.png');
+																	loadImg('image/insert_kuang.png');
+																	loadImg('image/text_mingming.png');
+																	loadImg('image/btn.png');
+																	loadImg('image/botton_shengcheng.png');
 																	showGT('23');
 																});
 															});
@@ -493,7 +502,8 @@
 
 	// 最终命名流程
 	var showNamePage = function(color) {
-		$('.name-page').addClass(color).show();
+		$('.name-page').show();
+		$('.name-page .name-page-bg.' + color).show();
 	};
 	var showNameForm = function() {
 		_hidePopWrap();
@@ -510,13 +520,13 @@
 				len ++;
 			}
 		}
-		if (len > 20) {
+		if (len > 8) {
 			return false;
 		}
 		return true;
 	};
 	var showNameResult = function() {
-		var name = $('.pop-wrap.form .form-input').val().trim();
+		var name = $('.name-form-input input').val().trim();
 		if (name.length > 0) {
 			if (checkNameLength(name)) {
 				_sdi.share.init(
@@ -529,14 +539,18 @@
 					function(opt) {},
 					function(res) {}
 				);
-				var resultWrap = $('.pop-wrap.result');
-				var instanceArr = [3, 5, 8, 10, 15, 18];
-				var instance = instanceArr[Math.floor(Math.random() * 6)];
-				resultWrap.find('.star-name').text(name);
-				resultWrap.find('.star-instance').text(instance);
-				_hidePopWrap();
-				_showPopWrap(resultWrap);
-				$('.music-wrap').hide();
+				var result = $('.name-result-text');
+				var now = new Date();
+				result.find('.name').text(name);
+				result.find('.year').text(now.getFullYear());
+				result.find('.month').text(now.getMonth() + 1);
+				result.find('.date').text(now.getDate());
+				result.find('.hour').text(now.getHours());
+				result.find('.minute').text(now.getMinutes());
+				result.find('.second').text(now.getSeconds());
+				$('.name-form-page').hide();
+				$('.name-result-page').show();
+				$('.name-star-text').text(name);
 			}
 			else {
 				alert('抱歉，字符长度超限制，请按命名规则输入。');
@@ -680,6 +694,9 @@
 		$('.sec-wrap.gif_24 .anchor-wrap.c').click(function() {
 			hideSec(24);
 			showNamePage('yellow');
+		});
+		$('.name-page .name-form-preview, .name-page .name-form-create').click(function() {
+			showNameResult();
 		});
 	});
 }());
