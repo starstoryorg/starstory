@@ -227,7 +227,6 @@
 			loadAudio();
 			setTimeout(function() {
 				loadImg('image/qqliulanqi.png');
-				loadImg('image/icon_dot.png');
 				loadImg('image/icon_star.png');
 				loadGif('2', null, function() {
 					loadGif('3');
@@ -276,9 +275,7 @@
 															loadGif('23', null, function() {
 																showGT('21');
 																loadGif('24', null, function() {
-																	loadGif('25', null, function() {
-																		showGT('23');
-																	});
+																	showGT('23');
 																});
 															});
 														});
@@ -681,18 +678,6 @@
 
 		$('.sec-wrap.gif_24 .gif-wrap').click(function() {
 			hideSec(24);
-			showSec(25, function() {
-				setTimeout(function() {
-					showNameStar();
-				}, 4030);
-			});
-		});
-
-		$('.sec-wrap.gif_25 .pop-wrap.name .pop-btn-name').click(function() {
-			showNameForm();
-		});
-		$('.sec-wrap.gif_25 .pop-wrap.form .form-submit').click(function() {
-			showNameResult();
 		});
 	});
 }());
