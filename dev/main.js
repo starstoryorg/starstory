@@ -491,16 +491,9 @@
 		}, 2000);
 	};
 
-	// 最终分享流程
-	var _showPopWrap = function(popWrap) {
-		popWrap.css({zIndex: 3, opacity: 1});
-	};
-	var _hidePopWrap = function() {
-		$('.pop-wrap').css({zIndex: 1, opacity: 0});
-	};
-	var showNameStar = function() {
-		_hidePopWrap();
-		_showPopWrap($('.pop-wrap.name'));
+	// 最终命名流程
+	var showNamePage = function(color) {
+		$('.name-page').addClass(color).show();
 	};
 	var showNameForm = function() {
 		_hidePopWrap();
@@ -676,8 +669,17 @@
 			});
 		});
 
-		$('.sec-wrap.gif_24 .gif-wrap').click(function() {
+		$('.sec-wrap.gif_24 .anchor-wrap.a').click(function() {
 			hideSec(24);
+			showNamePage('blue');
+		});
+		$('.sec-wrap.gif_24 .anchor-wrap.b').click(function() {
+			hideSec(24);
+			showNamePage('white');
+		});
+		$('.sec-wrap.gif_24 .anchor-wrap.c').click(function() {
+			hideSec(24);
+			showNamePage('yellow');
 		});
 	});
 }());

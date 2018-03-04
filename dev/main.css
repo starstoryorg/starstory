@@ -309,18 +309,74 @@ a.btn.fun.b {
 	left: initial;
 	text-align: left;
 }
-.gif_24 .anc-wrap.a {
-	width: 18%;
-	left: 24%;
-	top: 20%;
+.gif_24 .anchor-wrap {
+	position: absolute;
+	background-color: #ff000073;
 }
-.gif_24 .anc-wrap.b {
-	width: 28%;
-	left: 12%;
-	top: 72%;
+.gif_24 .anchor {
+	padding-bottom: 100%;
+	display: block;
 }
-.gif_24 .anc-wrap.c {
-	width: 33%;
-	right: 15%;
+.gif_24 .anchor-wrap.a {
+	width: 34%;
+	left: 52%;
 	top: 31%;
+}
+.gif_24 .anchor-wrap.b {
+	width: 20%;
+	left: 63%;
+	top: 66%;
+}
+.gif_24 .anchor-wrap.c {
+	width: 28%;
+	left: 10%;
+	top: 76%;
+}
+
+.name-page {
+	z-index: 2;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
+}
+.name-page.blue {
+	background-image: url(image/bg_blue.png);
+}
+.name-page.white {
+	background-image: url(image/bg_white.png);
+}
+.name-page.yellow {
+	background-image: url(image/bg_yellow.png);
+}
+.name-form-footer {
+	width: 82%;
+	position: absolute;
+	overflow: hidden;
+	bottom: 20px;
+	left: 9%;
+}
+.name-form-btn {
+	padding: 16px 0 13px 52px;
+	text-align: center;
+	font-size: 11px;
+	color: #fff;
+	display: block;
+	background-position: left;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-image: url(image/img_trai.png);
+}
+.name-form-btn.a {
+	float: left;
+}
+.name-form-btn.b {
+	float: right;
+}
+.name-result-page {
+	display: none;
 }
