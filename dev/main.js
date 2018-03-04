@@ -106,7 +106,7 @@
 					}
 			});
 	}
-	var gifVersion = '?v=01131730';
+	var gifVersion = '?v=03041434';
 
 	// 加载音频
 	var loadAudio = function() {
@@ -218,9 +218,9 @@
 
 	// 初始化
 	var init = function() {
-		var percentNum = $('.process .percent-num');
+		var percentNum = $('.process .process-progress');
 		loadGif('1', function(progress) {
-			percentNum.text(progress);
+			percentNum.text(progress + '%');
 		}, function() {
 			showSec1();
 			document.querySelector('.process').style.display = 'none';
