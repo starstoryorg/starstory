@@ -233,6 +233,50 @@ a.btn.fun.b {
 	bottom: 40px;
 }
 
+.cd-wrap {
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	position: absolute;
+}
+.cd-wrap.flash {
+	-webkit-transition: transform 4s;
+	transform: translate3d(0, 0, 0)!important;
+}
+.gif_5 .cd-wrap {
+	top: 40%;
+	left: 50%;
+	width: 272px;
+	height: 120px;
+	margin-left: -136px;
+	transform: translate3d(-272px,120px,0);
+	background-image: url(image/cd_milu.png);
+}
+.gif_9 .cd-wrap {
+	width: 245px;
+	height: 87.5px;
+	background-image: url(image/cd_renche.png);
+	bottom: 40px;
+	left: 12px;
+}
+.gif_13 .cd-wrap {
+	background-image: url(image/cd_chaoren.png);
+	transform: translate3d(-142px,78px,0);
+	width: 142px;
+	height: 78px;
+	bottom: 92px;
+	left: 72px;
+}
+.gif_17 .cd-wrap {
+	left: 50%;
+	bottom: 128px;
+	width: 182.5px;
+	height: 63.5px;
+	margin-left: -108px;
+	transform: translate3d(-182.5px,-63.5px,0);
+	background-image: url(image/cd_feipan.png);
+}
+
 .gif_1 p.text {
 	font-size: 13px;
 	line-height: 30px;

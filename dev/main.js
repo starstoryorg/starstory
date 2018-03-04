@@ -232,6 +232,7 @@
 				loadGif('2', null, function() {
 					loadGif('3');
 					loadGif('4');
+					loadImg('image/cd_milu.png');
 					loadGif('5', null, function() {
 						showGT('2');
 						loadGif('4fan');
@@ -240,6 +241,7 @@
 							showGT('5');
 							loadGif('7');
 							loadGif('8');
+							loadImg('image/cd_renche.png');
 							loadGif('9', null, function() {
 								showGT('6');
 								loadGif('8fan');
@@ -248,6 +250,7 @@
 									showGT('9');
 									loadGif('11');
 									loadGif('12');
+									loadImg('image/cd_chaoren.png');
 									loadGif('13', null, function() {
 										showGT('10');
 										loadGif('12fan');
@@ -256,6 +259,7 @@
 											showGT('13');
 											loadGif('15');
 											loadGif('16');
+											loadImg('image/cd_feipan.png');
 											loadGif('17', null, function() {
 												showGT('14');
 												loadGif('16fan');
@@ -302,6 +306,10 @@
 	var showGT = function(index) {
 		$('.sec-wrap.gif_' + index + ' a.btn.fun.loading').hide();
 		$('.sec-wrap.gif_' + index + ' a.btn.fun.loaded').show();
+	};
+	// cd动画
+	var showCD = function(sec) {
+		sec.find('.cd-wrap').addClass('flash');
 	};
 
 	// 距离
@@ -401,6 +409,7 @@
 	var showSec5 = function() {
 		showSec(5, function(sec) {
 			showJG(sec);
+			showCD(sec);
 		});
 	};
 	var showSec7 = function() {
@@ -433,6 +442,7 @@
 	var showSec13 = function() {
 		showSec(13, function(sec) {
 			showJG(sec);
+			showCD(sec);
 		});
 	};
 	var showSec15 = function() {
@@ -449,6 +459,7 @@
 	var showSec17 = function() {
 		showSec(17, function(sec) {
 			showJG(sec);
+			showCD(sec);
 		});
 	};
 	var showSec19 = function() {
