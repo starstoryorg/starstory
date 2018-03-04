@@ -234,8 +234,9 @@ a.btn.fun.b {
 }
 
 .gif_1 p.text {
-	font-size: 16px;
-	line-height: 36px;
+	font-size: 13px;
+	line-height: 30px;
+	top: 14%;
 }
 .gif_2 .btn.fun.a {
 	left: 72%;
