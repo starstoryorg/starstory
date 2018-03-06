@@ -179,7 +179,7 @@ body {
 	display: block;
 }
 
-p.text {
+.text {
 	color: #fff;
 	text-align: center;
 	position: absolute;
@@ -189,10 +189,10 @@ p.text {
 	left: 5%;
 	top: 12%;
 }
-p.text .large {
+.text .large {
 	font-size: 27.5px;
 }
-p.text .split {
+.text .split {
 	display: inline-block;
 	height: 26px;
 }
@@ -282,7 +282,7 @@ a.btn.fun.b {
 	background-image: url(image/cd_feipan.png);
 }
 
-.gif_1 p.text {
+.gif_1 .text {
 	font-size: 13px;
 	line-height: 30px;
 	top: 14%;
@@ -313,6 +313,9 @@ a.btn.fun.b {
 	width: auto;
 	left: initial;
 	text-align: left;
+}
+.gif_24 .text .large {
+	font-size: 22px;
 }
 .gif_24 .anchor-wrap {
 	position: absolute;
@@ -420,7 +423,7 @@ a.btn.fun.b {
 	display: block;
 	width: 100%;
 	height: 100%;
-	background-size: 100px;
+	background-size: 107px;
 	background-repeat: no-repeat;
 	background-position: center;
 	color: #fff;
