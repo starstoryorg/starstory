@@ -744,6 +744,15 @@
 			hideSec(24);
 			showNamePage('yellow');
 		});
+
+		$('.name-form-input input').focus(function() {
+			$(this).css('background-position', '200px');
+		});
+		$('.name-form-input input').blur(function() {
+			if ($(this).val().trim().length <= 0) {
+				$(this).css('background-position', 'center');
+			}
+		});
 		$('.name-page .name-form-preview').click(function() {
 			showPreview();
 		});
