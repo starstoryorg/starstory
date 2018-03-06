@@ -2,14 +2,9 @@
 	font-family: Roboto;
 	src: url(font/my2.TTF);
 }
-@font-face {
-	font-family: fyyzzt;
-	src: url(font/fyyzzt.ttf);
-}
 body {
 	margin: 0;
 	overflow: hidden;
-	font-family: fyyzzt;
 }
 .wrap {
 	overflow: hidden;
@@ -593,7 +588,7 @@ a.btn.fun.b {
 	height: 100%;
 	top: 0;
 	left: 0;
-	z-index: 3;
+	z-index: 4;
 	line-height: 580px;
 }
 #result_image {
