@@ -502,6 +502,7 @@
 
 	// 最终命名流程
 	var showNamePage = function(color) {
+		$('.name-star-text').addClass(color);
 		$('.name-page').show();
 		$('.name-page .name-page-bg.' + color).show();
 	};
@@ -524,6 +525,21 @@
 			return false;
 		}
 		return true;
+	};
+	var checkName = function(callback) {
+
+		var name = $('.name-form-input input').val().trim();
+		if (name.length > 0) {
+			if (checkNameLength(name)) {
+				callback(name);
+			}
+			else {
+				alert('抱歉，字符长度超限制，请按命名规则输入。');
+			}
+		}
+		else {
+			alert('请为星球命名');
+		}
 	};
 	var showNameResult = function() {
 		var name = $('.name-form-input input').val().trim();
@@ -548,7 +564,6 @@
 				result.find('.hour').text(now.getHours());
 				result.find('.minute').text(now.getMinutes());
 				result.find('.second').text(now.getSeconds());
-				$('.name-form-page').hide();
 				$('.name-result-page').show();
 				$('.name-star-text').text(name);
 			}
@@ -559,6 +574,40 @@
 		else {
 			alert('请为星球命名');
 		}
+	};
+	var showPreview = function() {
+
+		checkName(function(name) {
+
+			$('.name-star-text').text(name);
+		});
+	};
+	var showResult = function() {
+
+		checkName(function(name) {
+
+			var result = $('.name-result-text');
+			var now = new Date();
+			result.find('.name').text(name);
+			result.find('.year').text(now.getFullYear());
+			result.find('.month').text(now.getMonth() + 1);
+			result.find('.date').text(now.getDate());
+			result.find('.hour').text(now.getHours());
+			result.find('.minute').text(now.getMinutes());
+			result.find('.second').text(now.getSeconds());
+			$('.name-form-page').hide();
+			$('.name-result-page').show();
+			$('.name-star-text').text(name);
+			$('.canvas-page').show();
+			html2canvas($('#canvas_area')[0]).then(function(canvas) {
+				$('#result_image').attr('src', canvas.toDataURL());
+			});
+		});
+	};
+
+	var makeImage = function() {
+
+		var canvas = document.getElementById('imageBoard');
 	};
 
 	$(document).ready(function() {
@@ -581,7 +630,7 @@
 			$('#music')[0].play();
 		});
 
-		$('.sec-wrap.gif_2 .btn.fun.a.loaded').click(function() {
+		$('.sec-wrap.gif_2 .btn.fun.a.loaded, .sec-wrap.gif_2 .btn-ball').click(function() {
 			hideSec(2);
 			showSec3();
 		});
@@ -600,7 +649,7 @@
 			}, 1040);
 		});
 
-		$('.sec-wrap.gif_6 .btn.fun.a.loaded').click(function() {
+		$('.sec-wrap.gif_6 .btn.fun.a.loaded, .sec-wrap.gif_6 .btn-ball').click(function() {
 			hideSec(6);
 			showSec7();
 		});
@@ -619,7 +668,7 @@
 			}, 1080);
 		});
 
-		$('.sec-wrap.gif_10 .btn.fun.a.loaded').click(function() {
+		$('.sec-wrap.gif_10 .btn.fun.a.loaded, .sec-wrap.gif_10 .btn-ball').click(function() {
 			hideSec(10);
 			showSec11();
 		});
@@ -638,7 +687,7 @@
 			}, 2070);
 		});
 
-		$('.sec-wrap.gif_14 .btn.fun.a.loaded').click(function() {
+		$('.sec-wrap.gif_14 .btn.fun.a.loaded, .sec-wrap.gif_14 .btn-ball').click(function() {
 			hideSec(14);
 			showSec15();
 		});
@@ -657,7 +706,7 @@
 			}, 1000);
 		});
 
-		$('.sec-wrap.gif_18 .btn.fun.a.loaded').click(function() {
+		$('.sec-wrap.gif_18 .btn.fun.a.loaded, .sec-wrap.gif_18 .btn-ball').click(function() {
 			hideSec(18);
 			showSec19();
 		});
@@ -674,7 +723,7 @@
 			}, 90);
 		});
 
-		$('.sec-wrap.gif_23 .btn.fun.b.loaded').click(function() {
+		$('.sec-wrap.gif_23 .btn.fun.b.loaded, .sec-wrap.gif_23 .btn-ball').click(function() {
 			hideSec(23);
 			showSec(24, function(sec) {
 				var text = sec.find('.text');
@@ -695,8 +744,11 @@
 			hideSec(24);
 			showNamePage('yellow');
 		});
-		$('.name-page .name-form-preview, .name-page .name-form-create').click(function() {
-			showNameResult();
+		$('.name-page .name-form-preview').click(function() {
+			showPreview();
+		});
+		$('.name-page .name-form-create').click(function() {
+			showResult();
 		});
 	});
 }());

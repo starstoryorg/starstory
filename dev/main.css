@@ -110,6 +110,9 @@ body {
 	right: 0;
 }
 
+#canvas_area {
+	height: 100%;
+}
 .logo-wrap {
 	background-image: url(image/logo_zhuixingji.png);
 	position: fixed;
@@ -177,6 +180,43 @@ body {
 }
 .sec-wrap .gif-wrap img {
 	display: block;
+}
+.sec-wrap .btn-ball-wrap {
+	position: absolute;
+}
+.sec-wrap .btn-ball {
+	padding-bottom: 100%;
+	display: block;
+}
+.gif_2 .btn-ball-wrap {
+	width: 80%;
+	left: 10%;
+	top: 30%;
+}
+.gif_6 .btn-ball-wrap {
+	width: 65%;
+	left: 8%;
+	top: 52%;
+}
+.gif_10 .btn-ball-wrap {
+	width: 91%;
+	left: 9%;
+	top: 44%;
+}
+.gif_14 .btn-ball-wrap {
+	width: 40%;
+	left: 40%;
+	top: 52%;
+}
+.gif_18 .btn-ball-wrap {
+	width: 50%;
+	left: 32%;
+	top: 59%;
+}
+.gif_23 .btn-ball-wrap {
+	width: 70%;
+	left: 0%;
+	top: 30%;
 }
 
 .text {
@@ -374,18 +414,61 @@ a.btn.fun.b {
 	background-image: url(image/bg_yellow.png);
 }
 .name-star-text {
-	top: 36%;
+	top: 34%;
 	width: 100%;
-	font-size: 48px;
+	font-size: 42px;
 	position: absolute;
 	text-align: center;
-	font-family: fyyzzt;
-	-webkit-text-fill-color: transparent;
-	text-shadow: 0 1px 1.5px rgba(0,0,0,.61);
-	background: -webkit-linear-gradient(left, #fff, #666263, #fff, #6f6c6d, #fff);
-	-webkit-background-clip: text;
-	opacity: .6;
-	padding-top: 16px;
+	font-family: Arial;
+}
+.name-star-text.blue {
+	opacity: .67;
+	text-shadow: 
+		0 1px 0 blue,
+		0 2px 0 #444,
+		0 3px 0 #333,
+		0 4px 0 #222,
+		0 5px 0 #111,
+		0 6px 1px rgba(0,0,0,.1),
+		0 0 5px rgba(0,0,0,.1),
+		0 1px 3px rgba(0,0,0,.3),
+		0 3px 5px rgba(0,0,0,.2),
+		0 5px 10px rgba(0,0,0,.25),
+		0 10px 10px rgba(0,0,0,.2),
+		0 20px 20px rgba(0,0,0,.15);
+}
+.name-star-text.white {
+	color: #fff;
+	opacity: .7;
+	text-shadow:
+		0 1px 0 #ccc,
+		0 2px 0 #c9c9c9,
+		0 3px 0 #bbb,
+		0 4px 0 #b9b9b9,
+		0 5px 0 #aaa,
+		0 6px 1px rgba(0,0,0,.1),
+		0 0 5px rgba(0,0,0,.1),
+		0 1px 3px rgba(0,0,0,.3),
+		0 3px 5px rgba(0,0,0,.2),
+		0 5px 10px rgba(0,0,0,.25),
+		0 10px 10px rgba(0,0,0,.2),
+		0 20px 20px rgba(0,0,0,.15);
+}
+.name-star-text.yellow {
+	opacity: .67;
+	text-shadow: 
+		0 1px 0 darkgoldenrod,
+		0 2px 0 #444,
+		0 3px 0 #333,
+		0 4px 0 #222,
+		0 5px 0 #111,
+		0 6px 1px rgba(0,0,0,.1),
+		0 0 5px rgba(0,0,0,.1),
+		0 1px 3px rgba(0,0,0,.3),
+		0 3px 5px rgba(0,0,0,.2),
+		0 5px 10px rgba(0,0,0,.25),
+		0 10px 10px rgba(0,0,0,.2),
+		0 20px 20px rgba(0,0,0,.15);
 }
 .name-form-box {
 	left: 50%;
@@ -460,6 +543,7 @@ a.btn.fun.b {
 	left: 9%;
 }
 .name-form-btn {
+	text-decoration: none;
 	padding: 16px 0 13px 52px;
 	text-align: center;
 	font-size: 11px;
@@ -498,4 +582,24 @@ a.btn.fun.b {
 	background-repeat: no-repeat;
 	background-position: center;
 	background-image: url(image/botton_shengcheng.png);
+}
+
+.canvas-page {
+	color: #fff;
+	display: none;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 3;
+	line-height: 580px;
+}
+#result_image {
+	top: 0;
+	height: 100%;
+	position: absolute;
+	display: block;
+	width: 100%;
 }

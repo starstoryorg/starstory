@@ -8,6 +8,11 @@
 	</head>
 	<body>
 		<div class="wrap">
+			<div class="music-wrap">
+				<a class="music-btn on show"></a>
+				<a class="music-btn off"></a>
+				<audio id="music" loop></audio>
+			</div>
 			<div class="process">
 				<div class="process-content">
 					<div class="process-progress">0%</div>
@@ -23,41 +28,42 @@
 					<div class="instance-text">0千米</div>
 				</div>
 			</div>
-			<div class="logo-wrap"></div>
-			<div class="music-wrap">
-				<a class="music-btn on show"></a>
-				<a class="music-btn off"></a>
-				<audio id="music" loop></audio>
+			<div class="canvas-page">
+				图片生成中...
+				<img id="result_image">
 			</div>
-			<div class="name-page">
-				<div class="name-page-bg blue"></div>
-				<div class="name-page-bg white"></div>
-				<div class="name-page-bg yellow"></div>
-				<div class="name-star-text">SIGNAL</div>
-				<div class="name-form-page">
-					<div class="name-form-box">
-						<div class="name-form-text">此星球已被您占领<br>快来刻上你的名字</div>
-						<div class="name-form-input">
-							<input type="text">
+			<div id="canvas_area">
+				<div class="logo-wrap"></div>
+				<div class="name-page">
+					<div class="name-page-bg blue"></div>
+					<div class="name-page-bg white"></div>
+					<div class="name-page-bg yellow"></div>
+					<p class="name-star-text">SIGNAL</p>
+					<div class="name-form-page">
+						<div class="name-form-box">
+							<div class="name-form-text">此星球已被您占领<br>快来刻上你的名字</div>
+							<div class="name-form-input">
+								<input type="text">
+							</div>
+							<div class="name-form-fun">
+								<a class="name-form-preview">预览</a>
+								<a class="name-form-create">生成</a>
+							</div>
 						</div>
-						<div class="name-form-fun">
-							<a class="name-form-preview">预览</a>
-							<a class="name-form-create">生成</a>
+						<div class="name-form-footer">
+							<a class="name-form-btn a" href="https://quan.qq.com/circle/q_13176885452_1501552274167519">进入追星记圈<br>探索星空奥秘</a>
+							<a class="name-form-btn b" href="http://ch.3g.qq.com/column/s">探索更多精品内容<br>跟着兴趣走下去</a>
 						</div>
 					</div>
-					<div class="name-form-footer">
-						<a class="name-form-btn a" href="https://quan.qq.com/circle/q_13176885452_1501552274167519">进入追星记圈<br>探索星空奥秘</a>
-						<a class="name-form-btn b" href="http://ch.3g.qq.com/column/s">探索更多精品内容<br>跟着兴趣走下去</a>
+					<div class="name-result-page">
+						<div class="name-result-text">
+							<span class="name"></span><br>
+							于公元<span class="year"></span>年<span class="month"></span>月<span class="date"></span>日<br>
+							<span class="hour"></span>时<span class="minute"></span>分<span class="second"></span>秒<br>
+							在宇宙中发现命名了人生中第一颗星
+						</div>
+						<div class="name-result-footer"></div>
 					</div>
-				</div>
-				<div class="name-result-page">
-					<div class="name-result-text">
-						<span class="name"></span><br>
-						于公元<span class="year"></span>年<span class="month"></span>月<span class="date"></span>日<br>
-						<span class="hour"></span>时<span class="minute"></span>分<span class="second"></span>秒<br>
-						在宇宙中发现命名了人生中第一颗星
-					</div>
-					<div class="name-result-footer"></div>
 				</div>
 			</div>
 			<div class="sec-wrap gif_1">
@@ -79,6 +85,7 @@
 			<div class="sec-wrap gif_2">
 				<div class="sec">
 					<div class="gif-wrap"><img></div>
+					<div class="btn-ball-wrap"><a class="btn-ball"></a></div>
 					<a class="btn fun a loaded">点击进入<br/>探索极光</a>
 					<a class="btn fun a loading">场景加载中~</a>
 				</div>
@@ -122,6 +129,7 @@
 			<div class="sec-wrap gif_6">
 				<div class="sec">
 					<div class="gif-wrap"><img></div>
+					<div class="btn-ball-wrap"><a class="btn-ball"></a></div>
 					<a class="btn fun a loaded">点击进入<br/>探索火星</a>
 					<a class="btn fun a loading">场景加载中~</a>
 				</div>
@@ -164,6 +172,7 @@
 			<div class="sec-wrap gif_10">
 				<div class="sec">
 					<div class="gif-wrap"><img></div>
+					<div class="btn-ball-wrap"><a class="btn-ball"></a></div>
 					<a class="btn fun a loaded">点击<br/>探索超新星</a>
 					<a class="btn fun a loading">场景加载中~</a>
 				</div>
@@ -206,6 +215,7 @@
 			<div class="sec-wrap gif_14">
 				<div class="sec">
 					<div class="gif-wrap"><img></div>
+					<div class="btn-ball-wrap"><a class="btn-ball"></a></div>
 					<a class="btn fun a loaded">点击<br/>探索银河系边缘</a>
 					<a class="btn fun a loading">场景加载中~</a>
 				</div>
@@ -248,6 +258,7 @@
 			<div class="sec-wrap gif_18">
 				<div class="sec">
 					<div class="gif-wrap"><img></div>
+					<div class="btn-ball-wrap"><a class="btn-ball"></a></div>
 					<a class="btn fun a loaded">点击<br/>探索黑洞</a>
 					<a class="btn fun a loading">场景加载中~</a>
 				</div>
@@ -299,6 +310,7 @@
 						宇宙深处是否存在未知生命和文明？<br/>
 						你探索的脚步不会停止
 					</p>
+					<div class="btn-ball-wrap"><a class="btn-ball"></a></div>
 					<a class="btn fun b loaded">继续探索<br/>未知星球</a>
 					<a class="btn fun b loading">场景加载中~</a>
 				</div>
@@ -317,6 +329,7 @@
 		</div>
 		<script type="text/javascript" src="resources/jquery-2.1.4.min.js"></script>
 		<script id="sdi_js" type="text/javascript" src="//3gimg.qq.com/webapp_scan/sdi/common/sdi_js_full_v2.js"></script>
+		<script type="text/javascript" src="resources/html2canvas.min.js"></script>
 		<script type="text/javascript" src="resources/main.js?v=03041434"></script>
 	</body>
 </html>
